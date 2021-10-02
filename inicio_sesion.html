@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
+    <title>Inicio de sesión</title>
 </head>
-<body style="background-color: #A7D9E5;">
+<body style="background-color: rgb(203, 248, 248);">
     <header>
         <center><img src="img/escudo.png" alt="Logo I.E." width="300px" title="Logo I.E."></center>
         <hr>
@@ -15,35 +15,24 @@
                 <a href="index.html" style="font-size: 30px;"> Inicio |</a>
                 <a href="nosotros.html" style="font-size: 30px;"> Nosotros |</a>
                 <a href="#" style="font-size: 30px;"> Contacto |</a>
-                <a href="inicio_sesion.html"><input style="margin: 20px;" type="submit" value="Iniciar Sesión"></a>
+                <input style="margin: 20px;" type="submit" value="Iniciar Sesión">
                 <a href="perfil.html" style="font-size: 30px;"> | Ver Perfil</a>
             </center>
         </div>
     </header>
-    <header>
-        <div>
-            <h1 style="margin: 20px 250px;; padding: 10px; text-align: center; color: red; background-color: black; ">
-                INFORMACION INSTITUCIONAL</h1>
-        </div>
-        <div>
-            <nav style="background-color: black; padding: 10px; text-align: center; margin: 10px 300px;">
-                <a href="nosotros/himno.html" style="color:blue; padding: 10px 50px;">Himno</a>
-                <a href="nosotros/mision y vision.html" style="color:blue;padding: 10px 50px;">Misión y visión</a>
-                <a href="nosotros/uniforme.html" style="color:blue; padding: 10px 50px;">Uniforme</a>
-            </nav><br>
-        </div>
-    </header>
-    <div>
-        <dl style="text-align: center;">
-            <dt style="height: auto; color: red; background-color: black; margin: 10px 600px;">DIRECCIÓN</dt><br>
-            <dd> 📌 Carrera 7 # 40-62 Bogotá-Colombia</dd><br>
-            <dt style="height: auto; color: red; background-color: black; margin: 10px 605px;">CONTACTO</dt><br>
-            <dd>📞 Primaria: 235 43 47<br><br>
-                📞 Bachillerato: 351 33 01
-            </dd><br>
-            <dd>✉ institucional@IEsimonbolivar.edu.co</dd>
-        </dl>
-    </div>
+    <section>
+        <form method="GET" target="_blank">
+            <fieldset style="margin: 10px 300px;border-style: solid;border-color: #BB2020;border-width: 5px;">
+                <h2 style="margin: 0 0 20px ; border-style: solid; border-color: #BEC7C7; border-radius: 5px 5px 0; text-align: center;color:#BEC7C7;background-color: #06111C;padding: 10px;font-size: 30px;">Datos de inicio</h2>      
+                <label style="font-size: 20px;" for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario"required="true" style="margin: 0px 0px 0px 25px; height: 40px; width: 200px; font-size: 20px;">
+                <a href="#" style="margin:0 0 0 350px; font-size: 18px;width: 800px;text-align: right;height: 0;">¿Olvidó su nombre de usuario o contraseña?</a><br><br>
+                <label style="font-size: 20px;" for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required="true" style="height: 40px; width: 200px; font-size: 20px;"><br><br> 
+                <input type="submit" value="Ingresar" style="width: 305px;height: 30px;">   
+            </fieldset>
+        </form>
+    </section>
     <footer>
         <div style="background-color: #BB2020; padding: 15px;">
             <div>
