@@ -4,20 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="../css/bootstrap.min.css">
+
     <title>Himno</title>
     <link href="../css/estilo.css" rel="stylesheet">
 </head>
 <body class="body" style="border: none;">
     <header>
-        <center><img src="../img/escudo.png" alt="Logo I.E." width="300px" title="Logo I.E."></center>
-        <hr>
-        <nav style="margin: 20px; background-color: #06111C;">
-            <center>
-                <a href="../index.html" style="font-size: 30px;"> Inicio |</a>
-                <a href="../nosotros.html" style="font-size: 30px;"> Nosotros |</a>
-                <a href="../inicio_sesion.html"><input style="margin: 20px;" type="submit" value="Iniciar Sesión"></a>
-                <a href="../perfil.html" style="font-size: 30px;"> | Ver Perfil</a>
-            </center>
+        <div class="row">
+            <div class="col-12">
+                <center><img src="../img/escudo.png" alt="Logo I.E." width="250px" title="Logo I.E."></center>
+            </div>
+            <div class="col-12 col-lg-3"></div>
+            <div class="col-12 col-lg-6">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Nosotros
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="../nosotros.html">Quienes somos</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="../nosotros.html">Contacto</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../perfil.html">Mi perfil</a>
+                          </li>
+                        </ul>
+                        <button class="btn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesión</button>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+            <!-- <p aria-hidden="true">
+                <span class="placeholder bg-danger placeholder-xs col-12"></span>
+            </p> -->
         </div>
     </header>
     <header>
@@ -85,21 +118,48 @@
         <div style="background-color: #BB2020; padding: 15px;">
             <div>
                 <center>
-                    <h2 style="color: #fff">REDES SOCIALES</h2>
-                    <img src="../img/fb-icon.png" alt="Logo FB." width="100px" title="Logo FB" style="padding: 20px;">
-                    <img src="../img/ig-icon.png" alt="Logo IG." width="100px" title="Logo IG" style="padding: 20px;">
-                    <img src="../img/yt-icon.png" alt="Logo YT." width="100px" title="Logo YT" style="padding: 20px;">
-                    <img src="../img/wp-icon.png" alt="Logo WP." width="100px" title="Logo WP" style="padding: 20px;">
+                    <h2 style="color: #fff"><span class="badge rounded-pill bg-light text-danger">REDES SOCIALES</span></h2>
+                    <img src="../img/fb-icon.png" alt="Logo FB." width="150px" title="Logo FB" style="padding: 20px;">
+                    <img src="../img/ig-icon.png" alt="Logo IG." width="150px" title="Logo IG" style="padding: 20px;">
+                    <img src="../img/yt-icon.png" alt="Logo YT." width="150px" title="Logo YT" style="padding: 20px;">
+                    <img src="../img/wp-icon.png" alt="Logo WP." width="150px" title="Logo WP" style="padding: 20px;">
                     <a href="mailto:prueba@unab.edu.co?subject=Contacto&body=mensaje de prueba">
-                        <img src="../img/mail.png" alt="mail." width="100px" title="mail" style="padding: 20px;"></a>
+                        <img src="../img/mail.png" alt="mail." width="150px" title="mail" style="padding: 20px;"></a>
                 </center>
             </div>
         </div> 
-        <div style="background-color: #BEC7C7; padding: 15px;">
+        <div style="background-color: #BEC7C7; color:#06111C; padding: 15px;">
             <center>
                 <p>Copyright © 2021 GRUPO 2 - Todos los derechos reservados.</p>
             </center>
         </div> 
     </footer>
+    <!-- Modal -->
+    <div class="modal fade modal-fullscreen" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="GET" target="_blank">
+                    <fieldset>
+                        <h2 style="margin: 0 0 20px ; border-style: solid; border-color: #BEC7C7; border-radius: 5px 5px 0; text-align: center;color:#BEC7C7;background-color: #06111C;padding: 10px;font-size: 30px;">Datos de inicio</h2>      
+                        <label style="font-size: 20px;" for="usuario">Usuario</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario"required="true" style="margin: 0px 0px 0px 25px; height: 40px; width: 200px; font-size: 20px;">
+                        <a href="#" style="margin:0 0 0 350px; font-size: 18px;width: 800px;text-align: right;height: 0;">¿Olvidó su nombre de usuario o contraseña?</a><br><br>
+                        <label style="font-size: 20px;" for="contraseña">Contraseña</label>
+                        <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required="true" style="height: 40px; width: 200px; font-size: 20px;"><br><br> 
+                        <input type="submit" value="Ingresar" style="width: 305px;height: 30px;">   
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Popper & Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
