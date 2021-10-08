@@ -3,41 +3,177 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
     <title>HOME</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
+    
 </head>
 <body style="background-color: #A7D9E5;">
     <header>
-        <center><img src="img/escudo.png" alt="Logo I.E." width="300px" title="Logo I.E."></center>
-        <hr>
-        <nav style="margin: 20px; background-color: #06111C;">
-            <center>
-                <a href="index.html" style="font-size: 30px;"> Inicio |</a>
-                <a href="nosotros.html" style="font-size: 30px;"> Nosotros |</a>
-                <a href="inicio_sesion.html"><input style="margin: 20px;" type="submit" value="Iniciar Sesión"></a>
-                <a href="perfil.html" style="font-size: 30px;"> | Ver Perfil</a>
-            </center>
+        <div class="row">
+            <div class="col-12">
+                <center><img src="img/escudo.png" alt="Logo I.E." width="250px" title="Logo I.E."></center>
+            </div>
+            <div class="col-12 col-lg-3"></div>
+            <div class="col-12 col-lg-6">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Nosotros
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="nosotros.html">Quienes somos</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="nosotros.html">Contacto</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="perfil.html">Mi perfil</a>
+                          </li>
+                        </ul>
+                        <button class="btn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesión</button>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+            <p aria-hidden="true">
+                <span class="placeholder bg-danger placeholder-xs col-12"></span>
+            </p>
         </div>
     </header>
     <section>
-        <img src="img/banner-home.jpg" alt="Banner" width="100%" title="Banner">
-        <h2 style="color: #bb2020;"><center>NOTICIAS</center></h2>
-        <article style="background-color: #FFEB4D; border: 2px solid #121317; margin:10px; padding:10px";>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisl, suscipit at eros et, tincidunt vehicula nunc. Aenean sollicitudin vulputate massa nec auctor. Integer scelerisque commodo lacus, a rhoncus libero fermentum aliquam. Proin non enim a velit consequat pharetra sodales a leo. Sed leo velit, imperdiet non arcu vitae, maximus congue quam. Nunc vitae neque vel enim feugiat imperdiet vel vitae magna. Donec porta blandit vestibulum. Sed in pellentesque leo, vitae pulvinar diam. Aliquam erat volutpat. Quisque dictum felis dignissim interdum scelerisque.</p>
-        </article>
-        <article style="background-color: #FFEB4D; border: 2px solid #121317; margin:10px; padding:10px";>
-            <p><center>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisl, suscipit at eros et, tincidunt vehicula nunc. Aenean sollicitudin vulputate massa nec auctor. Integer scelerisque commodo lacus, a rhoncus libero fermentum aliquam. Proin non enim a velit consequat pharetra sodales a leo. Sed leo velit, imperdiet non arcu vitae, maximus congue quam. Nunc vitae neque vel enim feugiat imperdiet vel vitae magna. Donec porta blandit vestibulum. Sed in pellentesque leo, vitae pulvinar diam. Aliquam erat volutpat. Quisque dictum felis dignissim interdum scelerisque.</p>
-        </article>
-        <br>
-        <h2 style="color: #bb2020;"><center>BIBLIOTECA VIRTUAL</center></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisl, suscipit at eros et, tincidunt vehicula nunc. Aenean sollicitudin vulputate massa nec auctor. Integer scelerisque commodo lacus, a rhoncus libero fermentum aliquam. Proin non enim a velit consequat pharetra sodales a leo. Sed leo velit, imperdiet non arcu vitae, maximus congue quam. Nunc vitae neque vel enim feugiat imperdiet vel vitae magna. Donec porta blandit vestibulum. Sed in pellentesque leo, vitae pulvinar diam. Aliquam erat volutpat. Quisque dictum felis dignissim interdum scelerisque.</p>
-        <p>Curabitur volutpat justo in turpis faucibus, ac auctor felis eleifend. Suspendisse potenti. Duis eu feugiat risus. Curabitur elit dui, aliquet sed fermentum et, tincidunt ut leo. Mauris vitae dignissim orci. Morbi quis imperdiet urna, ut sodales lacus. Aenean a eros feugiat, malesuada nunc et, viverra nisi.</p>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="5000">
+                <img src="img/banner-home.jpg" class="d-block w-100" alt="Banner-1">
+                <div class="carousel-caption d-none d-md-block">
+                  <h2><span class="badge rounded-pill bg-warning text-dark">First slide label</span></h2>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <img src="img/banner-home-1.jpg" class="d-block w-100" alt="Banner-2">
+                <div class="carousel-caption d-none d-md-block">
+                  <h2>Second slide label</h2>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <img src="img/banner-home-2.png" class="d-block w-100" alt="Banner-3">
+                <div class="carousel-caption d-none d-md-block">
+                  <h2>Third slide label</h2>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        <div class="row">
+            <div class="col-5 m-5">
+                <h2 style="color: #bb2020;"><center><span class="badge rounded-pill bg-danger">NOTICIAS</span></center></h2>
+                <article style="background-color: #FFEB4D; border: 2px solid #121317; margin:10px; padding:10px";>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisl, suscipit at eros et, tincidunt vehicula nunc. Aenean sollicitudin vulputate massa nec auctor. Integer scelerisque commodo lacus, a rhoncus libero fermentum aliquam. Proin non enim a velit consequat pharetra sodales a leo. Sed leo velit, imperdiet non arcu vitae, maximus congue quam. Nunc vitae neque vel enim feugiat imperdiet vel vitae magna. Donec porta blandit vestibulum. Sed in pellentesque leo, vitae pulvinar diam. Aliquam erat volutpat. Quisque dictum felis dignissim interdum scelerisque.</p>
+                </article>
+                <article style="background-color: #FFEB4D; border: 2px solid #121317; margin:10px; padding:10px";>
+                    <p><center>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elit nisl, suscipit at eros et, tincidunt vehicula nunc. Aenean sollicitudin vulputate massa nec auctor. Integer scelerisque commodo lacus, a rhoncus libero fermentum aliquam. Proin non enim a velit consequat pharetra sodales a leo. Sed leo velit, imperdiet non arcu vitae, maximus congue quam. Nunc vitae neque vel enim feugiat imperdiet vel vitae magna. Donec porta blandit vestibulum. Sed in pellentesque leo, vitae pulvinar diam. Aliquam erat volutpat. Quisque dictum felis dignissim interdum scelerisque.</p>
+                </article>
+            </div>
+            <div class="col-5 m-5">
+                <h2 style="color: #bb2020;"><center><span class="badge rounded-pill bg-danger">BIBLIOTECA VIRTUAL</span></center></h2>
+                <div class="accordion m-2" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="accordionExample">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <strong>Matemáticas</strong>
+                        </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="accordionExample">
+                            <div class="accordion-body">
+                                <div class="list-group list-group-flush">
+                                    <button type="button" class="list-group-item list-group-item-action">Recurso # 1</button>
+                                    <button type="button" class="list-group-item list-group-item-action">Recurso # 2</button>
+                                    <button type="button" class="list-group-item list-group-item-action">Recurso # 3</button>
+                                    <button type="button" class="list-group-item list-group-item-action">Recurso # 4</button>
+                                    <button type="button" class="list-group-item list-group-item-action">Recurso # 5</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <strong>Geografía</strong>
+                        </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="accordionExample">
+                                <div class="accordion-body">
+                                    <div class="list-group list-group-flush">
+                                        <button type="button" class="list-group-item list-group-item-action">Recurso # 1</button>
+                                        <button type="button" class="list-group-item list-group-item-action">Recurso # 2</button>
+                                        <button type="button" class="list-group-item list-group-item-action">Recurso # 3</button>
+                                        <button type="button" class="list-group-item list-group-item-action">Recurso # 4</button>
+                                        <button type="button" class="list-group-item list-group-item-action">Recurso # 5</button>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <strong>Historia</strong>
+                        </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                            <div class="list-group list-group-flush">
+                                <button type="button" class="list-group-item list-group-item-action">Recurso # 1</button>
+                                <button type="button" class="list-group-item list-group-item-action">Recurso # 2</button>
+                                <button type="button" class="list-group-item list-group-item-action">Recurso # 3</button>
+                                <button type="button" class="list-group-item list-group-item-action">Recurso # 4</button>
+                                <button type="button" class="list-group-item list-group-item-action">Recurso # 5</button>
+                            </div>                        
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-        <hr>
+    <p aria-hidden="true">
+        <span class="placeholder bg-danger placeholder-xs col-12"></span>
+    </p>
     <section>
-        <h2 style="color: #bb2020;"><center>PATROCINA:</center></h2>
+        <h2 style="color: #bb2020;"><center><span class="badge rounded-pill bg-danger">PATROCINA:</span></center></h2>
         <div style="margin: 40px;">
             <center>
                 <img src="img/default-placeholder.png" alt="Logo Patrocinador." width="300px" title="Logo Patrocinador." style="padding: 20px;">
@@ -51,13 +187,13 @@
         <div style="background-color: #BB2020; padding: 15px;">
             <div>
                 <center>
-                    <h2 style="color: #fff">REDES SOCIALES</h2>
-                    <img src="img/fb-icon.png" alt="Logo FB." width="100px" title="Logo FB" style="padding: 20px;">
-                    <img src="img/ig-icon.png" alt="Logo IG." width="100px" title="Logo IG" style="padding: 20px;">
-                    <img src="img/yt-icon.png" alt="Logo YT." width="100px" title="Logo YT" style="padding: 20px;">
-                    <img src="img/wp-icon.png" alt="Logo WP." width="100px" title="Logo WP" style="padding: 20px;">
+                    <h2 style="color: #fff"><span class="badge rounded-pill bg-light text-danger">REDES SOCIALES</span></h2>
+                    <img src="img/fb-icon.png" alt="Logo FB." width="150px" title="Logo FB" style="padding: 20px;">
+                    <img src="img/ig-icon.png" alt="Logo IG." width="150px" title="Logo IG" style="padding: 20px;">
+                    <img src="img/yt-icon.png" alt="Logo YT." width="150px" title="Logo YT" style="padding: 20px;">
+                    <img src="img/wp-icon.png" alt="Logo WP." width="150px" title="Logo WP" style="padding: 20px;">
                     <a href="mailto:prueba@unab.edu.co?subject=Contacto&body=mensaje de prueba">
-                        <img src="img/mail.png" alt="mail." width="100px" title="mail" style="padding: 20px;"></a>
+                        <img src="img/mail.png" alt="mail." width="150px" title="mail" style="padding: 20px;"></a>
                 </center>
             </div>
         </div> 
@@ -67,5 +203,32 @@
             </center>
         </div> 
     </footer>
+    <!-- Modal -->
+    <div class="modal fade modal-fullscreen" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="GET" target="_blank">
+                    <fieldset>
+                        <h2 style="margin: 0 0 20px ; border-style: solid; border-color: #BEC7C7; border-radius: 5px 5px 0; text-align: center;color:#BEC7C7;background-color: #06111C;padding: 10px;font-size: 30px;">Datos de inicio</h2>      
+                        <label style="font-size: 20px;" for="usuario">Usuario</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario"required="true" style="margin: 0px 0px 0px 25px; height: 40px; width: 200px; font-size: 20px;">
+                        <a href="#" style="margin:0 0 0 350px; font-size: 18px;width: 800px;text-align: right;height: 0;">¿Olvidó su nombre de usuario o contraseña?</a><br><br>
+                        <label style="font-size: 20px;" for="contraseña">Contraseña</label>
+                        <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required="true" style="height: 40px; width: 200px; font-size: 20px;"><br><br> 
+                        <input type="submit" value="Ingresar" style="width: 305px;height: 30px;">   
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Popper & Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
