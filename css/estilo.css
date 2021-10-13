@@ -8,6 +8,28 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.notice{
+    background-color: #FFEB4D; 
+    border: 2px solid #121317; 
+    margin:10px; 
+    padding:10px
+}
+
+.foo-redes{
+    background-color: #BB2020; 
+    padding: 15px;
+}
+
+.foo-copyright{
+    background-color: #BEC7C7; 
+    color:#06111C; 
+    padding: 15px;
+}
+
+.white-text{
+    color: #fff;
+}
+
 .title-modal{
     color: #06111C;
     text-align: center;
