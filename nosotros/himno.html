@@ -136,25 +136,34 @@
     <!-- Modal -->
     <div class="modal fade modal-fullscreen" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                <h2 class="title-modal" id="exampleModalLabel">Iniciar Sesión</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-bordered" method="GET" target="_blank">
+                        <div class="row">
+                            <div class="col-12 p-4">
+                                <h2 class="titulo">Datos de inicio</h2>      
+                            </div>
+                            <div class="col-12">
+                                <!-- <label style="font-size: 20px;" for="usuario">Usuario</label> -->
+                                <input class="inicio_sesion" type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required="true">
+                            </div>
+                            <div class="col-12 my-3">
+                                <!-- <label style="font-size: 20px;" for="contraseña">Contraseña</label> -->
+                                <input  class="inicio_sesion" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required="true">
+                                <br>
+                                <a href="#">¿Olvidó su nombre de usuario o contraseña?</a>
+                            </div>
+                            <div class="col-12">
+                                <input class="entrar" type="submit" value="Ingresar">
+                            </div>
+                        </div> 
+                    </form>
+                </div>
             </div>
-            <div class="modal-body">
-                <form method="GET" target="_blank">
-                    <fieldset>
-                        <h2 style="margin: 0 0 20px ; border-style: solid; border-color: #BEC7C7; border-radius: 5px 5px 0; text-align: center;color:#BEC7C7;background-color: #06111C;padding: 10px;font-size: 30px;">Datos de inicio</h2>      
-                        <label style="font-size: 20px;" for="usuario">Usuario</label>
-                        <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario"required="true" style="margin: 0px 0px 0px 25px; height: 40px; width: 200px; font-size: 20px;">
-                        <a href="#" style="margin:0 0 0 350px; font-size: 18px;width: 800px;text-align: right;height: 0;">¿Olvidó su nombre de usuario o contraseña?</a><br><br>
-                        <label style="font-size: 20px;" for="contraseña">Contraseña</label>
-                        <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required="true" style="height: 40px; width: 200px; font-size: 20px;"><br><br> 
-                        <input type="submit" value="Ingresar" style="width: 305px;height: 30px;">   
-                    </fieldset>
-                </form>
-            </div>
-        </div>
         </div>
     </div>
     <!-- Popper & Bootstrap -->
