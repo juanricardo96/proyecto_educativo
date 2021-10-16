@@ -4,45 +4,78 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='chrome'>
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+
     <title>PERFIL DEL ESTUDIANTE</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
+    <link href="css/estilo.css" rel="stylesheet">
+    <link  rel="icon" href="img/favicon.ico" type="image/ico" />
+
 </head>
 
-<body style="background-color: rgb(203, 248, 248);">
+<body class="body" style="border: none;">
     <header>
-        <center><img src="img/escudo.png" alt="Logo I.E." width="300px" title="Logo I.E."></center>
-        <hr>
-        <nav style="margin: 20px; background-color: #06111C;">
-            <center>
-                <a href="index.html" style="font-size: 30px;"> Inicio |</a>
-                <a href="nosotros.html" style="font-size: 30px;"> Nosotros |</a>
-                <a href="inicio_sesion.html"><input style="margin: 20px;" type="submit" value="Iniciar Sesión"></a>
-                <a href="perfil.html" style="font-size: 30px;"> | Ver Perfil</a>
-            </center>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <img src="img/escudo.png" alt="Logo I.E." width="250px" title="Logo I.E.">
+            </div>
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item navbar-text">
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                          </li>
+                          <li class="nav-item dropdown navbar-text">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Nosotros
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" navbar-text >
+                              <li><a class="dropdown-item" href="nosotros.html">Quienes somos</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="nosotros.html">Contacto</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item navbar-text">
+                            <a class="nav-link" aria-current="page" href="perfil.html">Mi perfil</a>
+                          </li>
+                        </ul>
+                        <button class="btn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesión</button>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+            <!-- <p aria-hidden="true">
+                <span class="placeholder bg-danger placeholder-xs col-12"></span>
+            </p> -->
         </div>
     </header>
                
-    <section>
+    <section class="body" style="margin: 10px 100px;">
         <fieldset>
-            <legend style="color: rgb(77, 5, 65); font-size: 30px; font-family: Arial, Helvetica, sans-serif;">
-                <center>Perfil</center>
+            <legend class="body">
+                Perfil
             </legend>
-            <center>
-                <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars.png"
-                    alt="Foto de Perfil" width="120px" height="120px" title="Foto de Perfil" />
-            </center>
+            <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars.png"
+                alt="Foto de Perfil" width="120px" height="120px" title="Foto de Perfil" />
             <p style="font-size: 18px;"> [Nombre del estudiante]: </p>
             <p style="font-size: 18px;">[Grado al que pertenece]: </p>
             <p style="font-size: 18px;">[Número de Identidad]: </p>
         </fieldset> <br>
     </section>
 
-    <section>
+    <section class="body" style="margin: 10px 100px;">
         <fieldset>
-            <legend style="color: rgb(77, 5, 65); font-size: 30px; font-family: Arial, Helvetica, sans-serif;">
-                <center>Información Adicional</center>
+            <legend class="body">
+                Información Adicional
             </legend>
             <p style="font-size: 18px;"> Fecha de nacimiento:</p>
             <p style="font-size: 18px;">Nombre del acudiente: </p>
@@ -51,38 +84,67 @@
         </fieldset> <br>
     </section>
 
-    <section>
+    <section class="body" style="margin: 10px 100px;">
         <fieldset>
-            <legend style="color: rgb(77, 5, 65); font-size: 30px; font-family: Arial, Helvetica, sans-serif;">
-                <center>Contenido</center>
+            <legend class="body">
+                Contenido
             </legend>
-            <center>
-                <p style="font-size: 18px; text-decoration: underline;"> Materias</p>
-                <p style="font-size: 18px; text-decoration: underline"> Calendarios </p>
-                <p style="font-size: 18px; text-decoration: underline"> Notas </p>
-            </center>
+            <p style="font-size: 18px; text-decoration: underline;"> Materias</p>
+            <p style="font-size: 18px; text-decoration: underline"> Calendarios </p>
+            <p style="font-size: 18px; text-decoration: underline"> Notas </p>
         </fieldset>
     </section>
     <br>
     <footer>
-        <div style="background-color: #BB2020; padding: 15px;">
-            <div>
-                <center>
-                    <h2 style="color: #fff">REDES SOCIALES</h2>
-                    <img src="img/fb-icon.png" alt="Logo FB." width="100px" title="Logo FB" style="padding: 20px;">
-                    <img src="img/ig-icon.png" alt="Logo IG." width="100px" title="Logo IG" style="padding: 20px;">
-                    <img src="img/yt-icon.png" alt="Logo YT." width="100px" title="Logo YT" style="padding: 20px;">
-                    <img src="img/wp-icon.png" alt="Logo WP." width="100px" title="Logo WP" style="padding: 20px;">
-                    <a href="mailto:prueba@unab.edu.co?subject=Contacto&body=mensaje de prueba">
-                        <img src="img/mail.png" alt="mail." width="100px" title="mail" style="padding: 20px;"></a>
-                </center>
-            </div>
+        <div class="foo-redes">
+            <h2><span class="badge rounded-pill bg-light text-danger">REDES SOCIALES</span></h2>
+            <img src="img/fb-icon.png" alt="Logo FB." width="150px" title="Logo FB" style="padding: 20px;">
+            <img src="img/ig-icon.png" alt="Logo IG." width="150px" title="Logo IG" style="padding: 20px;">
+            <img src="img/yt-icon.png" alt="Logo YT." width="150px" title="Logo YT" style="padding: 20px;">
+            <img src="img/wp-icon.png" alt="Logo WP." width="150px" title="Logo WP" style="padding: 20px;">
+            <a href="mailto:prueba@unab.edu.co?subject=Contacto&body=mensaje de prueba">
+                <img src="img/mail.png" alt="mail." width="150px" title="mail" style="padding: 20px;">
+            </a>
         </div> 
-        <div style="background-color: #BEC7C7; padding: 15px;">
-            <center>
-                <p>Copyright © 2021 GRUPO 2 - Todos los derechos reservados.</p>
-            </center>
+        <div class="foo-copyright">
+            <p>Copyright © 2021 GRUPO 2 - Todos los derechos reservados.</p>
         </div> 
     </footer>
+    <!-- Modal -->
+    <div class="modal fade modal-fullscreen" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h2 class="title-modal" id="exampleModalLabel">Iniciar Sesión</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-bordered" method="GET" target="_blank">
+                        <div class="row">
+                            <div class="col-12 p-4">
+                                <h2 class="titulo">Datos de inicio</h2>      
+                            </div>
+                            <div class="col-12">
+                                <!-- <label style="font-size: 20px;" for="usuario">Usuario</label> -->
+                                <input class="inicio_sesion" type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required="true">
+                            </div>
+                            <div class="col-12 my-3">
+                                <!-- <label style="font-size: 20px;" for="contraseña">Contraseña</label> -->
+                                <input  class="inicio_sesion" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required="true">
+                                <br>
+                                <a href="#">¿Olvidó su nombre de usuario o contraseña?</a>
+                            </div>
+                            <div class="col-12">
+                                <input class="entrar" type="submit" value="Ingresar">
+                            </div>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Popper & Bootstrap -->
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
