@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script src="/jquery/jquery-3.6.0.min.js"></script><!--de esta forma se importa el jquery-->
+<script>
+    $(function(){
+        $("#guardar_usuario").on("click",function(e){
+            e.preventDefault();
+            let nombre = document.getElementById("nombre").value;
+            let email= $("#email").val();
+            let prioridad= $("#prioridad").val();// se obtienen los valores ingresados
+
+            fetch("http://127.0.0.1:8080/usuario" ,{
+                method:"POST",
+                mode:"cors",
+                cache:"no-cache",
+                headers:{"Content-type":"application/json"},
+                body:JSON.stringify({nombre,email,prioridad})// de esta forma se convierten en json
+
+            }).then(respose => respose.json()).then(()=>alert("Guardado"))// si todo sale bien sale una ventana que dice guardado
+
+        });
+    });
+</script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,15 +57,13 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" navbar-text >
                               <li><a class="dropdown-item" href="../nosotros.html">Quienes somos</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="../nosotros.html">Contacto</a></li>
                             </ul>
                           </li>
                           <li class="nav-item navbar-text">
-                            <a class="nav-link" aria-current="page" href="../perfil.html">Mi perfil</a>
+                            <a class="nav-link" aria-current="page" href="../perfil.html">Estudiantes</a>
                           </li>
                         </ul>
-                        <button class="btn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesión</button>
+                        <button class="btn btn-success" style="margin-right: 585px;" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar</button>
                       </div>
                     </div>
                   </nav>
@@ -114,29 +133,26 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h2 class="title-modal" id="exampleModalLabel">Iniciar Sesión</h2>
+                <h5 class="body"
+                style="margin-right: 200px; text-decoration: none; font-size: 20px; padding: 10px 40px;" id="exampleModalLabel">Registro</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-bordered" method="GET" target="_blank">
-                        <div class="row">
-                            <div class="col-12 p-4">
-                                <h2 class="titulo">Datos de inicio</h2>      
-                            </div>
-                            <div class="col-12">
-                                <!-- <label style="font-size: 20px;" for="usuario">Usuario</label> -->
-                                <input class="inicio_sesion" type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required="true">
-                            </div>
-                            <div class="col-12 my-3">
-                                <!-- <label style="font-size: 20px;" for="contraseña">Contraseña</label> -->
-                                <input  class="inicio_sesion" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required="true">
-                                <br>
-                                <a href="#">¿Olvidó su nombre de usuario o contraseña?</a>
-                            </div>
-                            <div class="col-12">
-                                <input class="entrar" type="submit" value="Ingresar">
-                            </div>
-                        </div> 
+                    <form method="GET" target="_blank">
+                        <fieldset>
+                            <section>
+                                <form class="marg-form"><!--se crea el formulario -->
+                                    <input class="body"
+                                        style="margin: 5px 50px; text-decoration: none; font-size: 15px; padding: 10px 100px; color: white;" type="text" name="nombre" id="nombre" placeholder="Nombre completo"><br><br>
+                                    <input class="body"
+                                        style="margin: 5px 50px; text-decoration: none; font-size: 15px; padding: 10px 100px; color: white;" type="text" name="email" id="email" placeholder="Email"><br><br>
+                                    <input class="body"
+                                        style="margin: 5px 50px; text-decoration: none; font-size: 15px; padding: 10px 0px; color: white;" type="text" name="prioridad" id="prioridad" placeholder="Grado" ><br><br>
+                                    <input  class="body"
+                                    style="margin: 5px 50px; text-decoration: none; font-size: 21px; padding: 10px 30px;" type="submit" value="Guardar"    id="guardar_usuario">
+                                </form>
+                            </section>  
+                        </fieldset>
                     </form>
                 </div>
             </div>

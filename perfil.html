@@ -1,6 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#cargar").click(function(){// funcion que carga los usuarios registrados
+                $.get("http://127.0.0.1:8080/usuario",function(data){
+                         
+                    $("#cuerpo").html("");
+                    for (let i = 0 ; i<data.length;i++){
+                        let tr=`<tr>
+                            <td>`+data[i].id+`</td>
+                            <td>`+data[i].nombre+`</td>
+                            <td>`+data[i].email+`</td>
+                            <td>`+data[i].prioridad+`</td>
+                            <td><input style="border: solid #BB2020;" type="submit" id="actualizar" value="Actualizar" onclick="actualizarUsuario(${data[i].id})"></td>
+                            <td><input style="border: solid #BB2020;" type="submit" id="eliminar" value="Eliminar" onclick="eliminarUsuario(${data[i].id})"></td>
+                            </tr>`;
+                            $("#cuerpo").append(tr)
+                    }
+            })
+        })
+        })
 
+        $(function(){
+            $("#buscar_prioridad").click(function(){// funcion que busca usuarios por su prioridad
+                let prioridad = document.getElementById("prioridad").value;
+                console.log(prioridad);
+                let url="http://127.0.0.1:8080/usuario/query?prioridad="
+
+                $.get(url+prioridad,function(data){
+
+                    $("#cuerpo").html("");
+                    for (let i = 0 ; i<data.length;i++){
+                        let tr=`<tr>
+                            <td>`+data[i].id+`</td>
+                            <td>`+data[i].nombre+`</td>
+                            <td>`+data[i].email+`</td>
+                            <td>`+data[i].prioridad+`</td>
+                            <td><input style="border: solid #BB2020;" type="submit" id="actualizar" value="Actualizar" onclick="actualizarUsuario(${data[i].id})"></td>
+                            <td><input style="border: solid #BB2020;" type="submit" id="eliminar" value="Eliminar" onclick="eliminarUsuario(${data[i].id})"></td>
+                            </tr>`;
+                            $("#cuerpo").append(tr)
+                    }
+            })
+        })
+        })
+
+        $(function(){
+            $("#buscar_id").click(function(){//funcion que busca usuarios por su id
+                let id = document.getElementById("id").value;
+                console.log(id);
+                let url="http://127.0.0.1:8080/usuario/"
+
+                $.get(url+id,function(data){
+
+                    $("#cuerpo").html("");
+                        let tr=`<tr>
+                            <td>`+data.id+`</td>
+                            <td>`+data.nombre+`</td>
+                            <td>`+data.email+`</td>
+                            <td>`+data.prioridad+`</td>
+                            <td><input style="border: solid #BB2020;" type="submit" id="actualizar" value="Actualizar" onclick="actualizarUsuario(${data[i].id})"></td>
+                            <td><input style="border: solid #BB2020;" type="submit" id="eliminar" value="Eliminar" onclick="eliminarUsuario(${data.id})"></td>
+                            </tr>`;
+                            $("#cuerpo").append(tr)
+                    
+            })
+        })
+        })
+
+        function eliminarUsuario(id){//funcion para eliminar usuarios
+            let url="http://127.0.0.1:8080/usuario/"+id;
+            fetch(url, {
+                method:"DELETE",
+                mode:"cors",
+                cache:"no-cache"
+            })
+            .then(data => console.log(data));
+        }
+
+    </script>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='chrome'>
@@ -40,15 +119,13 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" navbar-text >
                               <li><a class="dropdown-item" href="nosotros.html">Quienes somos</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="nosotros.html">Contacto</a></li>
                             </ul>
                           </li>
                           <li class="nav-item navbar-text">
-                            <a class="nav-link" aria-current="page" href="perfil.html">Mi perfil</a>
+                            <a class="nav-link" aria-current="page" href="perfil.html">Estudiantes</a>
                           </li>
                         </ul>
-                        <button class="btn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesión</button>
+                        <button class="btn btn-success" style="margin-right: 585px;" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar</button>
                       </div>
                     </div>
                   </nav>
@@ -59,40 +136,37 @@
         </div>
     </header>
                
-    <section class="body" style="margin: 10px 100px;">
+    <section>
         <fieldset>
-            <legend class="body">
-                Perfil
+            <legend class="body" style="margin: 50px 0px; font-size: 20px;">
+                Estudiantes
             </legend>
-            <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars.png"
-                alt="Foto de Perfil" width="120px" height="120px" title="Foto de Perfil" />
-            <p style="font-size: 18px;"> [Nombre del estudiante]: </p>
-            <p style="font-size: 18px;">[Grado al que pertenece]: </p>
-            <p style="font-size: 18px;">[Número de Identidad]: </p>
+            <div>
+                <input class="body"
+                style="margin: 25px 125px; text-decoration: none; font-size: 15px;" type="submit" id="cargar" name="cargar" value="Cargar Todos"><br>
+                <input class="body"
+                style="margin: 25px 0px; text-decoration: none; font-size: 15px;" type="submit" id="buscar_prioridad" name="buscar_prioridad" value="Buscar por grado">
+                <input class="body"
+                style="margin: 25px 0px; text-decoration: none; font-size: 15px;" type="text" id="prioridad"   name="prioridad" placeholder="Ingrese grado">
+            </div>
+        
+            <section>
+                <table style="border: solid #BB2020; padding: 15px; margin-left: 250px; color: white;">
+                    <thead style="color: #FFEB4D; text-align: center;">
+                        <th style="padding: 10px 25px;"># Registro </th>
+                        <th style="padding: 10px 25px;">Nombre </th>
+                        <th style="padding: 10px 25px;">email </th>
+                        <th style="padding: 10px 25px;">Grado </th>
+                        <th style="padding: 10px 25px;">Actualizar </th>  
+                        <th style="padding: 10px 25px;">Eliminar </th>             
+                    </thead>
+                    <tbody id="cuerpo">
+                    
+                    </tbody>
+                </table>
+            </section>
+        
         </fieldset> <br>
-    </section>
-
-    <section class="body" style="margin: 10px 100px;">
-        <fieldset>
-            <legend class="body">
-                Información Adicional
-            </legend>
-            <p style="font-size: 18px;"> Fecha de nacimiento:</p>
-            <p style="font-size: 18px;">Nombre del acudiente: </p>
-            <p style="font-size: 18px;">Correo electrónico: </p>
-            <p style="font-size: 18px;">Teléfono: </p>
-        </fieldset> <br>
-    </section>
-
-    <section class="body" style="margin: 10px 100px;">
-        <fieldset>
-            <legend class="body">
-                Contenido
-            </legend>
-            <p style="font-size: 18px; text-decoration: underline;"> Materias</p>
-            <p style="font-size: 18px; text-decoration: underline"> Calendarios </p>
-            <p style="font-size: 18px; text-decoration: underline"> Notas </p>
-        </fieldset>
     </section>
     <br>
     <footer>
@@ -115,29 +189,26 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h2 class="title-modal" id="exampleModalLabel">Iniciar Sesión</h2>
+                <h5 class="body"
+                style="margin-right: 200px; text-decoration: none; font-size: 20px; padding: 10px 40px;" id="exampleModalLabel">Registro</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-bordered" method="GET" target="_blank">
-                        <div class="row">
-                            <div class="col-12 p-4">
-                                <h2 class="titulo">Datos de inicio</h2>      
-                            </div>
-                            <div class="col-12">
-                                <!-- <label style="font-size: 20px;" for="usuario">Usuario</label> -->
-                                <input class="inicio_sesion" type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required="true">
-                            </div>
-                            <div class="col-12 my-3">
-                                <!-- <label style="font-size: 20px;" for="contraseña">Contraseña</label> -->
-                                <input  class="inicio_sesion" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required="true">
-                                <br>
-                                <a href="#">¿Olvidó su nombre de usuario o contraseña?</a>
-                            </div>
-                            <div class="col-12">
-                                <input class="entrar" type="submit" value="Ingresar">
-                            </div>
-                        </div> 
+                    <form method="GET" target="_blank">
+                        <fieldset>
+                            <section>
+                                <form class="marg-form"><!--se crea el formulario -->
+                                    <input class="body"
+                                        style="margin: 5px 50px; text-decoration: none; font-size: 15px; padding: 10px 100px; color: white;" type="text" name="nombre" id="nombre" placeholder="Nombre completo"><br><br>
+                                    <input class="body"
+                                        style="margin: 5px 50px; text-decoration: none; font-size: 15px; padding: 10px 100px; color: white;" type="text" name="email" id="email" placeholder="Email"><br><br>
+                                    <input class="body"
+                                        style="margin: 5px 50px; text-decoration: none; font-size: 15px; padding: 10px 0px; color: white;" type="text" name="prioridad" id="prioridad" placeholder="Grado" ><br><br>
+                                    <input  class="body"
+                                    style="margin: 5px 50px; text-decoration: none; font-size: 21px; padding: 10px 30px;" type="submit" value="Guardar"    id="guardar_usuario">
+                                </form>
+                            </section>  
+                        </fieldset>
                     </form>
                 </div>
             </div>

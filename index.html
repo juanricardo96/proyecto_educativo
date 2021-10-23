@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html>
+<script src="/jquery/jquery-3.6.0.min.js"></script><!--de esta forma se importa el jquery-->
+<script>
+    $(function(){
+        $("#guardar_usuario").on("click",function(e){
+            e.preventDefault();
+            let nombre = document.getElementById("nombre").value;
+            let email= $("#email").val();
+            let prioridad= $("#prioridad").val();// se obtienen los valores ingresados
+
+            fetch("http://127.0.0.1:8080/usuario" ,{
+                method:"POST",
+                mode:"cors",
+                cache:"no-cache",
+                headers:{"Content-type":"application/json"},
+                body:JSON.stringify({nombre,email,prioridad})// de esta forma se convierten en json
+
+            }).then(respose => respose.json()).then(()=>alert("Guardado"))// si todo sale bien sale una ventana que dice guardado
+
+        });
+    });
+</script>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -38,15 +59,13 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" navbar-text >
                               <li><a class="dropdown-item" href="nosotros.html">Quienes somos</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="nosotros.html">Contacto</a></li>
                             </ul>
                           </li>
                           <li class="nav-item navbar-text">
-                            <a class="nav-link" aria-current="page" href="perfil.html">Mi perfil</a>
+                            <a class="nav-link" aria-current="page" href="perfil.html">Estudiantes</a>
                           </li>
                         </ul>
-                        <button class="btn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesión</button>
+                        <button class="btn btn-success" style="margin-right: 585px;" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar</button>
                       </div>
                     </div>
                   </nav>
@@ -124,11 +143,11 @@
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="accordionExample">
                             <div class="accordion-body">
                                 <div class="list-group list-group-flush">
-                                    <button type="button" class="list-group-item list-group-item-action">Recurso # 1</button>
-                                    <button type="button" class="list-group-item list-group-item-action">Recurso # 2</button>
-                                    <button type="button" class="list-group-item list-group-item-action">Recurso # 3</button>
-                                    <button type="button" class="list-group-item list-group-item-action">Recurso # 4</button>
-                                    <button type="button" class="list-group-item list-group-item-action">Recurso # 5</button>
+                                    <button type="button" class="list-group-item list-group-item-action"><a href="http://fcasua.contad.unam.mx/apuntes/interiores/docs/98/1/mate_bas.pdf" target="_blank">Recurso # 1</a></button>
+                                    <button type="button" class="list-group-item list-group-item-action"><a href="https://web.ua.es/es/cursos-cero/documentos/matematicas/algebra-y-geometria.pdf" target="_blank">Recurso # 2</a></button>
+                                    <button type="button" class="list-group-item list-group-item-action"><a href="https://www.utadeo.edu.co/sites/tadeo/files/node/publication/field_attached_file/pdf-_matematicas_basicas-_completo-_09-15.pdf" target="_blank">Recurso # 3</a></button>
+                                    <button type="button" class="list-group-item list-group-item-action"><a href="http://www.matelandia.org/matematicabasica1.pdf" target="_blank">Recurso # 4</a></button>
+                                    <button type="button" class="list-group-item list-group-item-action"><a href="https://www.ing.unlp.edu.ar/sitio/ingreso/contenidos/matematica_curso_de_nivelacion_edicion.pdf" target="_blank">Recurso # 5</a></button>
                                 </div>
                             </div>
                         </div>
@@ -144,11 +163,11 @@
                             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="accordionExample">
                                 <div class="accordion-body">
                                     <div class="list-group list-group-flush">
-                                        <button type="button" class="list-group-item list-group-item-action">Recurso # 1</button>
-                                        <button type="button" class="list-group-item list-group-item-action">Recurso # 2</button>
-                                        <button type="button" class="list-group-item list-group-item-action">Recurso # 3</button>
-                                        <button type="button" class="list-group-item list-group-item-action">Recurso # 4</button>
-                                        <button type="button" class="list-group-item list-group-item-action">Recurso # 5</button>
+                                        <button type="button" class="list-group-item list-group-item-action"><a href="https://biologicaseba.files.wordpress.com/2012/08/geografc3ada_todo.pdf" target="_blank">Recurso # 1</a></button>
+                                        <button type="button" class="list-group-item list-group-item-action"><a href="https://www.editorialkapelusz.com/wp-content/uploads/2018/02/CAP-MODELO-AVANZA-GEOGRAFIA-CABA-estados-y-territorios-en-el-mundo.pdf" target="_blank">Recurso # 2</a></button>
+                                        <button type="button" class="list-group-item list-group-item-action"><a href="https://www.redalyc.org/pdf/440/44015082006.pdf" target="_blank">Recurso # 3</a></button>
+                                        <button type="button" class="list-group-item list-group-item-action"><a href="https://eprints.ucm.es/id/eprint/47867/7/Glosario%20de%20Geograf%C3%ADa%20.pdf" target="_blank">Recurso # 4</a></button>
+                                        <button type="button" class="list-group-item list-group-item-action"><a href="https://www.preventionweb.net/files/28726_basescurriculareshistoriaygeografia.pdf" target="_blank">Recurso # 5</a></button>
                                     </div>
                                 </div>
                             </div>                        
@@ -158,17 +177,17 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <strong>Historia</strong>
+                            <strong>Lenguaje</strong>
                         </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                         <div class="accordion-body">
                             <div class="list-group list-group-flush">
-                                <button type="button" class="list-group-item list-group-item-action">Recurso # 1</button>
-                                <button type="button" class="list-group-item list-group-item-action">Recurso # 2</button>
-                                <button type="button" class="list-group-item list-group-item-action">Recurso # 3</button>
-                                <button type="button" class="list-group-item list-group-item-action">Recurso # 4</button>
-                                <button type="button" class="list-group-item list-group-item-action">Recurso # 5</button>
+                                <button type="button" class="list-group-item list-group-item-action"><a href="https://fba.unlp.edu.ar/lenguajemm/?wpfb_dl=59" target="_blank">Recurso # 1</a></button>
+                                <button type="button" class="list-group-item list-group-item-action"><a href="https://textosenlinea.com.ar/academicos/Introduccion%20a%20la%20linguistica.pdf" target="_blank">Recurso # 2</a></button>
+                                <button type="button" class="list-group-item list-group-item-action"><a href="https://www.csub.edu/modlang/department/Spanish/LINGUISTICS/TEMA%201%20MA.pdf" target="_blank">Recurso # 3</a></button>
+                                <button type="button" class="list-group-item list-group-item-action"><a href="https://www.fing.edu.uy/tecnoinf/mvd/cursos/coe/material/el_signo_linguistico.pdf" target="_blank">Recurso # 4</a></button>
+                                <button type="button" class="list-group-item list-group-item-action"><a href="http://www.scielo.org.co/pdf/clin/n24/n24a02.pdf" target="_blank">Recurso # 5</a></button>
                             </div>                        
                         </div>
                         </div>
@@ -207,29 +226,26 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h2 class="title-modal" id="exampleModalLabel">Iniciar Sesión</h2>
+                <h5 class="body"
+                style="margin-right: 200px; text-decoration: none; font-size: 20px; padding: 10px 40px;" id="exampleModalLabel">Registro</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-bordered" method="GET" target="_blank">
-                        <div class="row">
-                            <div class="col-12 p-4">
-                                <h2 class="titulo">Datos de inicio</h2>      
-                            </div>
-                            <div class="col-12">
-                                <!-- <label style="font-size: 20px;" for="usuario">Usuario</label> -->
-                                <input class="inicio_sesion" type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required="true">
-                            </div>
-                            <div class="col-12 my-3">
-                                <!-- <label style="font-size: 20px;" for="contraseña">Contraseña</label> -->
-                                <input  class="inicio_sesion" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required="true">
-                                <br>
-                                <a href="#">¿Olvidó su nombre de usuario o contraseña?</a>
-                            </div>
-                            <div class="col-12">
-                                <input class="entrar" type="submit" value="Ingresar">
-                            </div>
-                        </div> 
+                    <form method="GET" target="_blank">
+                        <fieldset>
+                            <section>
+                                <form class="marg-form"><!--se crea el formulario -->
+                                    <input class="body"
+                                        style="margin: 5px 50px; text-decoration: none; font-size: 15px; padding: 10px 100px; color: white;" type="text" name="nombre" id="nombre" placeholder="Nombre completo"><br><br>
+                                    <input class="body"
+                                        style="margin: 5px 50px; text-decoration: none; font-size: 15px; padding: 10px 100px; color: white;" type="text" name="email" id="email" placeholder="Email"><br><br>
+                                    <input class="body"
+                                        style="margin: 5px 50px; text-decoration: none; font-size: 15px; padding: 10px 0px; color: white;" type="text" name="prioridad" id="prioridad" placeholder="Grado" ><br><br>
+                                    <input  class="body"
+                                    style="margin: 5px 50px; text-decoration: none; font-size: 21px; padding: 10px 30px;" type="submit" value="Guardar"    id="guardar_usuario">
+                                </form>
+                            </section>  
+                        </fieldset>
                     </form>
                 </div>
             </div>
